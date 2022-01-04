@@ -11,10 +11,13 @@ public class UserRegistrationMain {
 		String lastname =scanner.next();
 		System.out.println("Enter EmailID: ");
 		String email =scanner.next();
+		System.out.println("Enter PhoneNumber: ");
+		String phonenumber =scanner.next();
 		UserDetails userDetails=new UserDetails();
 		userDetails.setFirstname(firstname);
 		userDetails.setLastname(lastname);
 		userDetails.setEmail(email);
+		userDetails.setEmail(phonenumber);
 		UserRegistration registration=new UserRegistration();
 		registration.register(userDetails);
 	}

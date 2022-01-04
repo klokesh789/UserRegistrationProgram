@@ -4,7 +4,8 @@ public class UserDetails {
 	private String firstname;
 	private String lastname;
 	private String email;
-
+	private String phonenumber;
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -29,11 +30,13 @@ public class UserDetails {
 		this.email = email;
 	}
 
-	
+	public String getPhonenumber() {
+		return phonenumber;
+	}
 
-	
-
-	
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
 
 	
 	

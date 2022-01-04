@@ -3,22 +3,26 @@ package com.bridgelabz.userregistration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserRegistration<booleon> {
-	private static final String FIRSTNAME_REGEX = "^[A-Z][a-z A-z]{3}";
+public class UserRegistration {
+	private static final String FIRSTNAME_REGEX = "^[A-Z][a-z A-z]{2,}";
+	private static final String LASTNAME_REGEX = "^[A-Z][a-z A-z]{2,}";
 
 	public void register(UserDetails userDetails) {
-		boolean isNameValid=validateUserDetails(userDetails);
-		if(isNameValid) {
+		boolean isFirstNameValid=validateUserDetails(FIRSTNAME_REGEX,userDetails.getFirstname());
+		boolean isSecondNameValid=validateUserDetails(LASTNAME_REGEX,userDetails.getLastname());
+		
+		if(isFirstNameValid && isSecondNameValid) {
 			System.out.println(userDetails.getFirstname());
+			System.out.println(userDetails.getLastname());
 		}
 		else {
 			System.out.println("InvalidName");
 		}
 	}
 
-	private boolean validateUserDetails(UserDetails userDetails) {
-		Pattern pattern=Pattern.compile(FIRSTNAME_REGEX);
-		Matcher matcher=pattern.matcher(userDetails.getFirstname());
+	private boolean validateUserDetails(String regex, String dataToBeValidated) {
+		Pattern pattern=Pattern.compile(regex);
+		Matcher matcher=pattern.matcher(dataToBeValidated);
 		return matcher.matches();
 		
 	}

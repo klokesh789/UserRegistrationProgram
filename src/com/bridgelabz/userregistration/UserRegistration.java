@@ -8,18 +8,18 @@ public class UserRegistration {
 	private static final String LASTNAME_REGEX = "^[A-Z][a-z A-z]{2,}";
 	private static final String EMAIL_REGEX= "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[a-z]+$";
 	private static final String PHONENUMBER_REGEX = "^[0-9]{2}[\\s][0-9]{10}$";
+	private static final String PASSWORD_REGEX = "^[0-9 a-z A-Z @#$%^&-+=]{8,}$";
 
 	public void register(UserDetails userDetails) {
 		boolean isFirstNameValid=validateUserDetails(FIRSTNAME_REGEX,userDetails.getFirstname());
 		boolean isSecondNameValid=validateUserDetails(LASTNAME_REGEX,userDetails.getLastname());
 		boolean isEmailValid=validateUserDetails(EMAIL_REGEX,userDetails.getEmail());
 		boolean isNumberValid=validateUserDetails(PHONENUMBER_REGEX,userDetails.getPhonenumber());
+		boolean isPasswordValid = validateUserDetails(PASSWORD_REGEX,userDetails.getPassword());
 		
-		if(isFirstNameValid && isSecondNameValid&&isEmailValid&&isNumberValid) {
-			System.out.println(userDetails.getFirstname());
-			System.out.println(userDetails.getLastname());
-			System.out.println(userDetails.getEmail());
-			System.out.println(userDetails.getPhonenumber());
+		if(isFirstNameValid && isSecondNameValid&&isEmailValid&&isNumberValid&&isPasswordValid) {
+			System.out.println("Entered Details Are Valid");
+			
 			
 		}
 		else {

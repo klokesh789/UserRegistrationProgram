@@ -8,7 +8,7 @@ public class UserRegistration {
 	private static final String LASTNAME_REGEX = "^[A-Z][a-z A-z]{2,}";
 	private static final String EMAIL_REGEX= "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[a-z]+$";
 	private static final String PHONENUMBER_REGEX = "^[0-9]{2}[\\s][0-9]{10}$";
-	private static final String PASSWORD_REGEX = "^[0-9 a-z A-Z @#$%^&-+=]{8,}$";
+	private static final String PASSWORD_REGEX = "(?=.*[A-Z])[A-Za-z]{8,}$";
 
 	public void register(UserDetails userDetails) {
 		boolean isFirstNameValid=validateUserDetails(FIRSTNAME_REGEX,userDetails.getFirstname());

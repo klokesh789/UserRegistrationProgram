@@ -7,6 +7,15 @@ public class UserDetails {
 	private String phonenumber;
 	private String password;
 	
+	public UserDetails(String firstName,String lastName,String email,String phoneNumber,String password) {
+		super();
+		this.firstname = firstName;
+		this.lastname = lastName;
+		this.email=email;
+		this.phonenumber=phoneNumber;
+		this.password=password;
+	}
+	
 	public String getFirstname() {
 		return firstname;
 	}
